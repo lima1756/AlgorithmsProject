@@ -1,0 +1,28 @@
+{
+  "name": "algorithms-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lima1756/AlgorithmsProject.git"
+  },
+  "author": "Ivan Morett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lima1756/AlgorithmsProject/issues"
+  },
+  "homepage": "https://github.com/lima1756/AlgorithmsProject#readme",
+  "devDependencies": {
+    "electron": "^4.1.4"
+  },
+  "dependencies": {
+    "calculator-lib": "^1.0.2",
+    "file-dialog": "0.0.7",
+    "spectre.css": "^0.5.8"
+  }
+}

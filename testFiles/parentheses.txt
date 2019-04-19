@@ -1,0 +1,10 @@
+##The output is a list, so don't need to compare the String, but that the final list contains the elements, the same order is not required
+Input:
+2 – 1 – 1
+Output:
+0 2
+----------
+Input:
+2 * 3 - 4 * 5
+Output:
+-34 -14 -10 -10 10

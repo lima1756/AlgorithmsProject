@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>    
+    <link rel="stylesheet" href="../node_modules\spectre.css\dist\spectre.min.css">
+    <link rel="stylesheet" href="../node_modules\spectre.css\dist\spectre-icons.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="columns">
+            <div class="column col-12">
+                    <div class="form-group">
+                        <label class="form-label">Select the problem you want to test:</label>
+                        <label class="form-radio">
+                            <input type="radio" id="parentheses" name="problems" value="parentheses">
+                            <i class="form-icon"></i> Parentheses
+                        </label>
+                        <label class="form-radio">
+                            <input type="radio" id="mergelist" name="problems" value="lists">
+                            <i class="form-icon"></i> Mergelist
+                        </label>
+                        <label class="form-radio">
+                            <input type="radio" id="trains" name="problems" value="lists">
+                            <i class="form-icon"></i> Trains
+                        </label>
+                        <label class="form-radio">
+                            <input type="radio" id="words" name="problems" value="parentheses">
+                            <i class="form-icon"></i> Words
+                        </label>
+                        <label class="form-radio">
+                            <input type="radio" id="wordboard" name="problems" value="lists">
+                            <i class="form-icon"></i> Wordboard
+                        </label>
+                        <label class="form-radio">
+                            <input type="radio" id="travelSalesMan" name="problems" value="lists">
+                            <i class="form-icon"></i> Travel Salesman
+                        </label>
+                        <label class="form-radio">
+                            <input type="radio" id="dijkstra" name="problems" value="parentheses">
+                            <i class="form-icon"></i> Dijkstra
+                        </label>
+                        <label class="form-radio">
+                            <input type="radio" id="prims" name="problems" value="lists">
+                            <i class="form-icon"></i> Prims
+                        </label>
+                    </div>
+            </div>
+            <div class="column col-12">
+                <button class="btn" id="fileBtn">Select File and run</button>
+            </div>
+            <div class="column col-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Output</th>
+                                <th>Desired Output</th>
+                                <th>Passed?</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+    <div>
+        
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
