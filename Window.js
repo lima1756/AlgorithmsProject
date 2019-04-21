@@ -4,9 +4,10 @@ const { BrowserWindow } = require('electron')
 
 // default window settings
 const defaultProps = {
-  width: 500,
+  width: 800,
   height: 800,
-  show: false
+  show: true,
+  frame: true 
 }
 
 class Window extends BrowserWindow {
@@ -18,6 +19,8 @@ class Window extends BrowserWindow {
     this.loadFile(file)
     // this.webContents.openDevTools()
 
+    // Hide menubar
+    //this.setMenu(null);
     // gracefully show when ready to prevent flickering
     this.once('ready-to-show', () => {
       this.show()
