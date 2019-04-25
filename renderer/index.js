@@ -1,12 +1,13 @@
 'use strict'
 
-const problems = require('./problems');
+const problems = require('../problems/problemList');
 const fileDialog = require('file-dialog')
 const FileReader = require('../helpers/FileReader')
 const Parentheses = require('../problems/Parentheses');
 const mergelist = require('../problems/mergelist');
 const trains = require('../problems/trains');
 const words = require('../problems/words');
+const ips = require('../problems/ips');
 
 
 const radios = document.getElementsByName('problems');
@@ -21,6 +22,7 @@ document.getElementById('mergelist').value = problems.mergeList;
 document.getElementById('trains').value = problems.trains;
 document.getElementById('words').value = problems.words;
 document.getElementById('wordboard').value = problems.wordboard;
+document.getElementById('ips').value = problems.ips;
 document.getElementById('travelSalesMan').value = problems.travelSalesMan;
 document.getElementById('dijkstra').value = problems.dijkstra;
 document.getElementById('prims').value = problems.prims;
@@ -90,6 +92,26 @@ function solve(problemId, data){
             const wordsResult = words(data);
             for(let i =0; i<wordsResult.length; i++){
                 addResultsRow(wordsResult[i], data.output[i], wordsResult[i]==(data.output[i]=='true'));
+            }
+        break;
+        case problems.ips:
+            const ipsResult = ips(data.input);
+            for(let i =0; i<data.output.length; i++){
+                let desiredOutput = data.output[i].split(' ');
+                if(desiredOutput[0]===''){
+                    desiredOutput = []
+                }
+                addResultsRow(ipsResult[i].join(' '), desiredOutput, (()=>{
+                    if(ipsResult[i].length!==desiredOutput.length)
+                        return false;
+                    let check = true;
+                    for(let j = 0; j<desiredOutput.length; j++){
+                        check = ipsResult[i].indexOf(desiredOutput[j])!==-1 && check;
+                        if(!check)
+                            break;
+                    }
+                    return check;
+                })());
             }
         break;
     }

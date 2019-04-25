@@ -4,9 +4,10 @@ const problems = {
     trains: 2,
     words: 3,
     wordboard: 4,
-    travelSalesMan: 5,
-    dijkstra: 6,
-    prims: 7
+    ips: 5,
+    travelSalesMan: 6,
+    dijkstra: 7,
+    prims: 8
 }
 
 module.exports = problems;

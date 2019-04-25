@@ -2,7 +2,7 @@ module.exports = function trains(data){
     let answers = [];
     for(let i =0; i<data.input.length; i++){
         for(let j =0; j < data.input[i].length; j++){
-            data.input[i][j] = data.input[i][j].split(',').map(val=>parseInt(val));
+            data.input[i][j] = data.input[i][j].split(' ').map(val=>parseInt(val));
         }
         let days = []
         
