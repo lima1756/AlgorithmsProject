@@ -43,15 +43,23 @@ function minDistance(distances, visited){
 function generateMatrix(matrix, from){
     let sum = 0;
     console.log(from);
-    for(let i = 0; i<matrix.length; i++){
-        for(let j = i + 1; j<from.length; j++){
-            if(from[j]!==i)
-            {
-                matrix[i][j] = 0;
-                matrix[j][i] = 0;
+    for(let i = from.length-1; i>=0; i--){
+        for(let j = 0; j < from.length; j++){
+            if(from[i] === j){
+                matrix[j][i] = matrix[i][j];
             }
             else{
-                sum+=matrix[i][j];
+                matrix[i][j] = 0;
+            }
+        }
+    }
+    for(let i = 0; i<matrix.length; i++){
+        for(let j = i+1; j< matrix.length; j++){
+            if(matrix[i][j]!==0){
+                matrix[j][i] = matrix[i][j]
+            }
+            else if(matrix[j][i]!==0){
+                matrix[i][j] = matrix[j][i]
             }
         }
     }
