@@ -1,0 +1,14 @@
+##The first line is the size of the Matrix (3 rows, 4 columns)
+##After those lines, each line is an input that will be tested
+Input:
+3 4
+A B C E
+S F C S
+A D E E
+ABCCED
+SEE
+ABCB
+Output:
+true
+true
+false

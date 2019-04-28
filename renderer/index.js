@@ -8,6 +8,9 @@ const mergelist = require('../problems/mergelist');
 const trains = require('../problems/trains');
 const words = require('../problems/words');
 const ips = require('../problems/ips');
+const wordboard = require('../problems/wordboard');
+const dijkstra = require('../problems/dijkstra');
+const prims = require('../problems/prims');
 
 
 const radios = document.getElementsByName('problems');
@@ -113,6 +116,19 @@ function solve(problemId, data){
                     return check;
                 })());
             }
+        break;
+        case problems.wordboard:
+            const wordboardRes = wordboard(data.input)
+            console.log(wordboardRes);
+        break;
+        case problems.travelSalesMan:
+            
+        break
+        case problems.dijkstra:
+            dijkstra(data.input)
+        break;
+        case problems.prims:
+            prims(data.input)
         break;
     }
     table.style.display ='block';
