@@ -118,8 +118,12 @@ function solve(problemId, data){
             }
         break;
         case problems.wordboard:
-            const wordboardRes = wordboard(data.input)
+            const wordboardRes = wordboard(data.input)[0]
+            console.log(data.output);
             console.log(wordboardRes);
+            for(let i =0; i<wordboardRes.length; i++){
+                addResultsRow(wordboardRes[i], data.output[i], wordboardRes[i]==(data.output[i]=='true'));
+            }
         break;
         case problems.travelSalesMan:
             
