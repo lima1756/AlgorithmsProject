@@ -1,16 +1,16 @@
 'use strict'
 
-const problems = require('../problems/problemList');
+const problems = require('./problems/problemList');
 const fileDialog = require('file-dialog')
-const FileReader = require('../helpers/FileReader')
-const Parentheses = require('../problems/Parentheses');
-const mergelist = require('../problems/mergelist');
-const trains = require('../problems/trains');
-const words = require('../problems/words');
-const ips = require('../problems/ips');
-const wordboard = require('../problems/wordboard');
-const dijkstra = require('../problems/dijkstra');
-const prims = require('../problems/prims');
+const FileReader = require('./controllers/FileReader')
+const Parentheses = require('./problems/Parentheses');
+const mergelist = require('./problems/mergelist');
+const trains = require('./problems/trains');
+const words = require('./problems/words');
+const ips = require('./problems/ips');
+const wordboard = require('./problems/wordboard');
+const dijkstra = require('./problems/dijkstra');
+const prims = require('./problems/prims');
 
 
 const radios = document.getElementsByName('problems');
