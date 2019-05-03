@@ -61,7 +61,7 @@ function solve(problemId, data){
             for(let i = 0; i<data.input.length; i++)
             {
                 const output = new Parentheses(data.input[i]).results;
-                const desiredOutput = data.output[i].split(' ').map(value=>{
+                const desiredOutput = data.output[i][0].split(' ').map(value=>{
                     return parseFloat(value);
                 })
                 let passed = true;
@@ -83,7 +83,7 @@ function solve(problemId, data){
         case problems.mergeList:
             const res = mergelist(data);
             for(let i =0; i<res.length; i++){
-                addResultsRow(res[i], data.output[i], res[i]===data.output[i]);
+                addResultsRow(res[i], data.output[i], res[i]===data.output[i][0]);
             }
         break;
         case problems.trains:
@@ -101,7 +101,8 @@ function solve(problemId, data){
         case problems.ips:
             const ipsResult = ips(data.input);
             for(let i =0; i<data.output.length; i++){
-                let desiredOutput = data.output[i].split(' ');
+                
+                let desiredOutput = data.output[i][0].split(' ');
                 if(desiredOutput[0]===''){
                     desiredOutput = []
                 }
@@ -119,21 +120,36 @@ function solve(problemId, data){
             }
         break;
         case problems.wordboard:
-            const wordboardRes = wordboard(data.input)[0]
+            const wordboardRes = wordboard(data.input)
             console.log(data.output);
             console.log(wordboardRes);
             for(let i =0; i<wordboardRes.length; i++){
-                addResultsRow(wordboardRes[i], data.output[i], wordboardRes[i]==(data.output[i]=='true'));
+                for(let j = 0; j<wordboardRes[i].length; j++){
+                    addResultsRow(wordboardRes[i][j], data.output[i][j], wordboardRes[i][j]==(data.output[i][j]=='true'));
+                }
             }
         break;
         case problems.travelSalesMan:
-            travelSalesMan(data.input);
+            const travelRes = travelSalesMan(data.input);
+            for(let i =0; i<travelRes.length; i++){
+                addResultsRow(travelRes[i], data.output[i], travelRes[i]==parseInt(data.output[i]));
+            }
+            console.log(travelRes)
         break
         case problems.dijkstra:
-            dijkstra(data.input)
+            const dijkstraRes = dijkstra(data.input)
+            for(let i =0; i<dijkstraRes.length; i++){
+                addResultsRow(dijkstraRes[i].replace(/\n/g, '<br/>'), data.output[i].join('\n').replace(/\n/g, '<br/>'), dijkstraRes[i].replace(/\n/g, '<br/>')==data.output[i].join('\n').replace(/\n/g, '<br/>'));
+            }
+            console.log(dijkstraRes)
         break;
         case problems.prims:
-            prims(data.input)
+            const primsRes = prims(data.input)
+            console.log(data.output);
+            for(let i =0; i<primsRes.length; i++){
+                addResultsRow(primsRes[i].replace(/\n/g, '<br/>'), data.output[i].join('\n').replace(/\n/g, '<br/>'), primsRes[i].replace(/\n/g, '<br/>')==data.output[i].join('\n').replace(/\n/g, '<br/>'));
+            }
+            console.log(primsRes)
         break;
     }
     table.style.display ='block';

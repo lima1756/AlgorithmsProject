@@ -1,4 +1,5 @@
 module.exports = function prims(input){
+    let res = []
     for(let i = 0; i < input.length; i++){
         for(let j = 0; j < input[i].length; j++){
             input[i][j] = input[i][j].split(' ').map(val=>parseFloat(val));
@@ -24,8 +25,10 @@ module.exports = function prims(input){
 
         }
         generateMatrix(input[i], from);
-        console.log(input[i]);
+        const output = input[i].map(row => row.slice());
+        res.push(output.map(row=>row.join(' ')).join('\n'))
     }
+    return res;
 }
 
 function minDistance(distances, visited){

@@ -15,8 +15,14 @@ class FileReader{
         this.output = [];
         let state = 0;
         let input = [];
+        let output = [];
         cont.forEach(line => {
             if(line.indexOf("Input:")!==-1){
+                if(output.length!=0)
+                {
+                    this.output.push(output);
+                    output = [];
+                }
                 state = FileReader.STATE_INPUT;
             }
             else if(line.indexOf("Output:") !== -1){
@@ -28,9 +34,14 @@ class FileReader{
                 input.push(line.replace(/(\r\n|\n|\r)/g, ''));
             }
             else if(state === FileReader.STATE_OUTPUT){
-                this.output.push(line.replace(/(\r\n|\n|\r)/g, ''))
+                output.push(line.replace(/(\r\n|\n|\r)/g, ''))
             }
         });
+        if(output.length!=0)
+        {
+            this.output.push(output);
+            output = [];
+        }
     }
 
 

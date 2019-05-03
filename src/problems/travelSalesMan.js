@@ -1,4 +1,5 @@
 module.exports = function travelSalesMan(input){
+    let results = []
     for(let i = 0; i < input.length; i++){
         for(let j = 0; j < input[i].length; j++){
             input[i][j] = input[i][j].split(' ').map(val=>parseFloat(val));
@@ -10,10 +11,11 @@ module.exports = function travelSalesMan(input){
         new Node(null, input[i])
         
         
-        console.log(Node.upper);
+        results.push(Node.upper);
         
 
     }
+    return results;
 }
 
 

@@ -1,4 +1,5 @@
 module.exports = function dijkstra(input){
+    let res = []
     for(let i = 0; i < input.length; i++){
         const start = parseInt(input[i][0]);
         let matrix = []
@@ -25,8 +26,11 @@ module.exports = function dijkstra(input){
 
         }
         generateMatrix(matrix, from);
-        console.log(matrix);
+        
+        const output = matrix.map(row => row.slice());
+        res.push(output.map(row=>row.join(' ')).join('\n'))
     }
+    return res;
 }
 
 function minDistance(distances, visited){
