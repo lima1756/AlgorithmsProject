@@ -9,6 +9,7 @@ const trains = require('./problems/trains');
 const words = require('./problems/words');
 const ips = require('./problems/ips');
 const wordboard = require('./problems/wordboard');
+const travelSalesMan = require('./problems/travelSalesMan');
 const dijkstra = require('./problems/dijkstra');
 const prims = require('./problems/prims');
 
@@ -126,7 +127,7 @@ function solve(problemId, data){
             }
         break;
         case problems.travelSalesMan:
-            
+            travelSalesMan(data.input);
         break
         case problems.dijkstra:
             dijkstra(data.input)

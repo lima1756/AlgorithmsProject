@@ -37,8 +37,8 @@
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
       "github_repository": {
-        "owner": "",
-        "name": ""
+        "owner": "lima1756",
+        "name": "AlgorithmsProject"
       },
       "windowsStoreConfig": {
         "packageName": "",
